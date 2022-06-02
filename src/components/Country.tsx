@@ -7,6 +7,15 @@ interface ICountryProps {
 
 const Country: FunctionComponent<ICountryProps> = (props) => {
   const { country } = props
-  return <p>{country?.name?.common}</p>
+
+  return (
+    <>
+      <p>
+        {country?.name?.common} -{' '}
+        {country?.capital?.length > 0 ? country?.capital[0] : 'No info'} -{' '}
+        {country?.population}
+      </p>
+    </>
+  )
 }
 export default Country
